@@ -1,0 +1,57 @@
+{
+  "name": "@keycloak/keycloak-admin-client",
+  "version": "16.0.0-dev.35",
+  "description": "keycloak admin client",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\" \"test/*\"",
+    "build": "npm run clean && tsc -p ./tsconfig.release.json --pretty",
+    "test": "DEBUG=kc-admin mocha --require ts-node/register --recursive \"test/**/*.spec.ts\"",
+    "test:grep": "DEBUG=kc-admin mocha --require ts-node/register",
+    "coverage": "nyc npm run test",
+    "watch": "npm run build -- --watch",
+    "watch:test": "npm run test -- --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@keycloak/keycloak-admin-client": "^15.0.2",
+    "axios": "^0.21.0",
+    "camelize-ts": "^1.0.8",
+    "keycloak-js": "^15.0.2",
+    "lodash": "^4.17.21",
+    "query-string": "^7.0.1",
+    "url-join": "^4.0.0",
+    "url-template": "^2.0.8"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/chai": "^4.2.14",
+    "@types/faker": "^5.1.4",
+    "@types/lodash": "^4.14.165",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.7.1",
+    "@types/url-join": "^4.0.0",
+    "@types/url-template": "^2.0.28",
+    "chai": "^4.1.2",
+    "faker": "^5.1.0",
+    "mocha": "^9.1.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.2.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.0.5"
+  },
+  "author": "wwwy3y3",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keycloak/keycloak-nodejs-admin-client.git"
+  },
+  "homepage": "https://www.keycloak.org/"
+}
