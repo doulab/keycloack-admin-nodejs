@@ -628,11 +628,21 @@ export class Clients extends Resource<{realm?: string}> {
     urlParamKeys: ['id'],
   });
 
+
+  public updateAuthorizationScope = this.makeUpdateRequest<
+    {id: string,  clientScopeId: string},
+    {name: string; displayName?: string; iconUri?: string}
+  >({
+    method: 'PUT',
+    path: '{id}/authz/resource-server/scope/{clientScopeId}',
+    urlParamKeys: ['id', 'clientScopeId'],
+  });
+
   public deleteAuthorizationScope = this.makeRequest<
     {id: string, clientScopeId: string}
   >({
     method: 'DELETE',
-    path: '{id}/authz/resource-server/scope{clientScopeId}',
+    path: '{id}/authz/resource-server/scope/{clientScopeId}',
     urlParamKeys: ['id', 'clientScopeId'],
   });
 

@@ -13,7 +13,7 @@
 ## Install
 
 ```sh
-npm install @keycloak/keycloak-admin-client
+npm install @abdoulaye.org/keycloak-admin-client
 ```
 
 ## Usage
