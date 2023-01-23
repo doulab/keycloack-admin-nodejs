@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@keycloak/keycloak-admin-client": "^15.0.2",
-    "axios": "^0.21.0",
+    "axios": "^1.2.3",
     "camelize-ts": "^1.0.8",
     "keycloak-js": "^15.0.2",
     "lodash": "^4.17.21",
